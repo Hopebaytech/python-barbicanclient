@@ -103,7 +103,7 @@ class Client(object):
         if self._session.auth is None:
             self._validate_endpoint_and_project_id(endpoint, project_id)
 
-        if endpoint is not None:
+        if endpoint is not None and endpoint:
             self._barbican_endpoint = self._get_normalized_endpoint(endpoint)
         else:
             self._barbican_endpoint = self._get_normalized_endpoint(
